@@ -105,16 +105,14 @@ flowchart LR
 <div align="center">
 
 <a href="https://razorpay-build-a-thon-2026-rev-guar.vercel.app/">
-  <img src="https://image.thum.io/get/width/1200/crop/900/https://razorpay-build-a-thon-2026-rev-guar.vercel.app/" alt="RevGuard AI Live Production Operator Console on Vercel" width="850" />
+  <img src="https://raw.githubusercontent.com/Avinraj01/Razorpay-Build_A_Thon-2026-RevGuard.ai/main/docs/hero_console_preview.jpg" alt="RevGuard AI Hero Section & Live Operator Console" width="850" />
 </a>
 
 <br /><br />
 
 **[🚀 Open RevGuard.ai Live Operator Console](https://razorpay-build-a-thon-2026-rev-guar.vercel.app/)** &nbsp;&nbsp;·&nbsp;&nbsp; **[⚡ Test REST API Swagger Docs](https://revguard-backend.onrender.com/docs)**
 
-<sub>Click the live preview image to interact with the 3D Titanium preloader and real-time autonomous pipeline.</sub>
-
-</div>
+<sub>Click the live preview image to interact with the 3D Titanium preloader and real-time autonomous pipeline on Vercel.</sub>
 
 </div>
 
