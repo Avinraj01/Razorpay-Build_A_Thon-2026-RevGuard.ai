@@ -1,16 +1,11 @@
 <div align="center">
 
 # RevGuard.ai
-
 ### Autonomous AI Revenue Recovery Engine & Deterministic Policy Gate
 *Built for the **Razorpay Buildathon 2026** · **Track 03: AI Revenue Recovery***
-
 <br />
-
 <img src="https://readme-typing-svg.herokuapp.com?font=Plus+Jakarta+Sans&weight=700&size=24&duration=2800&pause=900&color=6366F1&center=true&vCenter=true&width=850&lines=Autonomous+AI+Revenue+Recovery;Mathematical+Zero+Double-Charge+Guarantee;Deterministic+Policy+Engine+Gates;SQLite+WAL+Atomic+Idempotency;277+Held-Out+Batch+ROI+Benchmark" alt="RevGuard AI Typing Animation" />
-
 <br />
-
 <a href="https://razorpay-build-a-thon-2026-rev-guar.vercel.app/"><img src="https://img.shields.io/badge/Live_Console-RevGuard.ai-6366F1?style=for-the-badge&logo=vercel&logoColor=white" /></a>
 <a href="https://revguard-backend.onrender.com/docs"><img src="https://img.shields.io/badge/API_Docs-FastAPI_Live-009688?style=for-the-badge&logo=fastapi&logoColor=white" /></a>
 <a href="https://github.com/Avinraj01/Razorpay-Build_A_Thon-2026---RavGuard.ai"><img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github" /></a>
