@@ -99,20 +99,22 @@ flowchart LR
 
 ---
 
-# Live Operator Console
+# 🎥 Live Operator Console Experience
 
-### Production Web Application
+### 🌐 Production Web Application Preview
 <div align="center">
 
 <a href="https://razorpay-build-a-thon-2026-rev-guar.vercel.app/">
-  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" alt="RevGuard AI Live Console" width="850" />
+  <img src="https://image.thum.io/get/width/1200/crop/900/https://razorpay-build-a-thon-2026-rev-guar.vercel.app/" alt="RevGuard AI Live Production Operator Console on Vercel" width="850" />
 </a>
 
-<br />
+<br /><br />
 
-**[Open RevGuard AI Live Operator Console](https://razorpay-build-a-thon-2026-rev-guar.vercel.app/)**
+**[🚀 Open RevGuard.ai Live Operator Console](https://razorpay-build-a-thon-2026-rev-guar.vercel.app/)** &nbsp;&nbsp;·&nbsp;&nbsp; **[⚡ Test REST API Swagger Docs](https://revguard-backend.onrender.com/docs)**
 
-<sub>Click above to launch the 3D Operator Console on Vercel.</sub>
+<sub>Click the live preview image to interact with the 3D Titanium preloader and real-time autonomous pipeline.</sub>
+
+</div>
 
 </div>
 
