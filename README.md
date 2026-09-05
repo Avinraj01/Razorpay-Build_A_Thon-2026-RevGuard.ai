@@ -36,11 +36,9 @@
 **"Find revenue that’s slipping away and win it back."**
 
 <br />
-
 <a href="https://razorpay.com/buildathon/">
   <img src="https://raw.githubusercontent.com/Avinraj01/Razorpay-Build_A_Thon-2026-RevGuard.ai/main/docs/razorpay_track03_buildathon.png" alt="Razorpay Buildathon 2026 Track 03: AI Revenue Recovery" width="850" />
 </a>
-
 <br /><br />
 
 **[🌐 Open Official Razorpay Buildathon Website](https://razorpay.com/buildathon/)** &nbsp;&nbsp;·&nbsp;&nbsp; **[🚀 Launch Live RevGuard.ai Operator Console](https://razorpay-build-a-thon-2026-rev-guar.vercel.app/)**
