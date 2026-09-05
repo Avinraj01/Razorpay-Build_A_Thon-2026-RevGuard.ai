@@ -14,15 +14,11 @@
 <a href="https://razorpay-build-a-thon-2026-rev-guar.vercel.app/"><img src="https://img.shields.io/badge/Live_Console-RevGuard.ai-6366F1?style=for-the-badge&logo=vercel&logoColor=white" /></a>
 <a href="https://revguard-backend.onrender.com/docs"><img src="https://img.shields.io/badge/API_Docs-FastAPI_Live-009688?style=for-the-badge&logo=fastapi&logoColor=white" /></a>
 <a href="https://github.com/Avinraj01/Razorpay-Build_A_Thon-2026---RavGuard.ai"><img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github" /></a>
-
 <br /><br />
-
 <a href="https://razorpay-build-a-thon-2026-rev-guar.vercel.app/">
   <img src="https://raw.githubusercontent.com/Avinraj01/Razorpay-Build_A_Thon-2026-RevGuard.ai/main/docs/create_a_video_Seamless_se.gif" alt="RevGuard AI Seamless 3D Animation" width="900" />
 </a>
-
 <br /><br />
-
 <img src="https://img.shields.io/badge/React-18.2-61DAFB?style=flat-square&logo=react&logoColor=black" />
 <img src="https://img.shields.io/badge/Three.js-WebGL-black?style=flat-square&logo=threedotjs" />
 <img src="https://img.shields.io/badge/FastAPI-0.128-009688?style=flat-square&logo=fastapi&logoColor=white" />
@@ -31,11 +27,8 @@
 <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=flat-square&logo=tailwind-css" />
 <img src="https://img.shields.io/badge/Vercel-Frontend-black?style=flat-square&logo=vercel" />
 <img src="https://img.shields.io/badge/Render-Backend-46E3B7?style=flat-square&logo=render&logoColor=black" />
-
 <br /><br />
-
 **RevGuard.ai** reverses the fragile AI agent paradigm in fintech: a probabilistic **LLM Diagnosis** proposes root causes from messy bank errors, while an absolute **Deterministic Policy Gate** enforces financial invariants (economic floors, retry limits, at-most-once delivery) backed by durable **SQLite Write-Ahead-Log (WAL)** single-writer locks.
-
 </div>
 
 ---
