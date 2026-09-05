@@ -17,6 +17,12 @@
 
 <br /><br />
 
+<a href="https://razorpay-build-a-thon-2026-rev-guar.vercel.app/">
+  <img src="https://raw.githubusercontent.com/Avinraj01/Razorpay-Build_A_Thon-2026-RevGuard.ai/main/docs/revguard_showcase_banner.png" alt="RevGuard AI Autonomous Revenue Recovery Engine" width="900" />
+</a>
+
+<br /><br />
+
 <img src="https://img.shields.io/badge/React-18.2-61DAFB?style=flat-square&logo=react&logoColor=black" />
 <img src="https://img.shields.io/badge/Three.js-WebGL-black?style=flat-square&logo=threedotjs" />
 <img src="https://img.shields.io/badge/FastAPI-0.128-009688?style=flat-square&logo=fastapi&logoColor=white" />
