@@ -28,6 +28,12 @@
 
 <br /><br />
 
+<a href="https://razorpay-build-a-thon-2026-rev-guar.vercel.app/">
+  <img src="https://raw.githubusercontent.com/Avinraj01/Razorpay-Build_A_Thon-2026-RevGuard.ai/main/docs/revguard_showcase_banner.png" alt="RevGuard AI Autonomous Revenue Recovery Engine Showcase Banner" width="880" />
+</a>
+
+<br /><br />
+
 **RevGuard.ai** reverses the fragile AI agent paradigm in fintech: a probabilistic **LLM Diagnosis** proposes root causes from messy bank errors, while an absolute **Deterministic Policy Gate** enforces financial invariants (economic floors, retry limits, at-most-once delivery) backed by durable **SQLite Write-Ahead-Log (WAL)** single-writer locks.
 
 </div>
