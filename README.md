@@ -227,70 +227,91 @@ sequenceDiagram
 
 ---
 
-# Economic Model & Benchmark Formula
+# 📊 Economic Model & Net Contribution Benchmark
 
-RevGuard AI evaluates policies based on **Net Economic Contribution Value**, not misleading gross retry counts:
+RevGuard AI benchmarks policies using true **Net Economic Contribution Value**, strictly penalizing false retries, user friction, and customer support escalation overhead:
 
-$$\text{Net Value} = \text{Gross Recovered INR} - (\text{Action Cost} + \text{Friction Cost} + \text{Escalation Cost})$$
+$$\Large \text{Net Value} = \text{Gross Recovered INR} - (\text{Action Cost} + \text{Friction Cost} + \text{Escalation Cost})$$
 
-### 277 Held-Out Batch Benchmark Results (70/30 Chronological Split)
+<br />
 
-| Policy Name | Evaluated Events | Recoveries Won | False Actions | Gross Value (INR) | Operational Costs (INR) | Net Recovered ROI (INR) | Rank |
+### 🏆 277 Held-Out Batch Benchmark (70/30 Chronological Split)
+
+| Policy Name | Evaluated Events | Recoveries Won | False Actions | Gross Value | Operational Costs | Net Recovered ROI | Leaderboard Rank |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **No Action** | 277 | 0 | 0 | ₹0.00 | ₹0.00 | **₹0.00** | 4th |
-| **Blind Retry** | 277 | 84 | 193 | ₹4,545.97 | ₹1,519.00 | **₹3,026.97** | 3rd |
-| **Rule Baseline** | 277 | 59 | 19 | ₹3,212.74 | ₹185.00 | **₹3,027.74** | 2nd |
-| **RevGuard AI Agent** | **277** | **69** | **41** | **₹3,763.22** | **₹310.00** | **₹3,453.22** | **1st (Winner)** |
+| <img src="https://img.shields.io/badge/Policy_01-No_Action-718096?style=flat-square" /> | `277` | `0` | `0` | `₹0.00` | `₹0.00` | **₹0.00** | <img src="https://img.shields.io/badge/Rank-4th-grey?style=flat-square" /> |
+| <img src="https://img.shields.io/badge/Policy_02-Blind_Retry-E53E3E?style=flat-square" /> | `277` | `84` | `193` | `₹4,545.97` | `-₹1,519.00` | **₹3,026.97** | <img src="https://img.shields.io/badge/Rank-3rd-orange?style=flat-square" /> |
+| <img src="https://img.shields.io/badge/Policy_03-Rule_Baseline-DD6B20?style=flat-square" /> | `277` | `59` | `19` | `₹3,212.74` | `-₹185.00` | **₹3,027.74** | <img src="https://img.shields.io/badge/Rank-2nd-yellow?style=flat-square" /> |
+| <img src="https://img.shields.io/badge/Policy_04-RevGuard_AI_Agent-38A169?style=flat-square" /> | **`277`** | **`69`** | **`41`** | **`₹3,763.22`** | **`-₹310.00`** | **`₹3,453.22`** | <img src="https://img.shields.io/badge/Winner-1st_Place-38A169?style=for-the-badge&logo=trophy&logoColor=white" /> |
+
+> [!TIP]
+> **Key Insight:** Blind retries rack up heavy API fees and friction penalties. **RevGuard AI Agent** yields the highest net contribution margin (**+₹3,453.22 INR**) by selectively retrying only recoverable events and safely escalating degraded bank outages.
 
 ---
 
-# Adversarial Chaos & Invariant Verification Lab
+# 🧪 Adversarial Chaos & Invariant Verification Lab
 
-| Scenario ID | Test Name | Simulated Adversity | Verified Invariant Proof |
-|:---|:---|:---|:---|
-| **CHAOS-01** | `concurrent-webhooks` | 10 concurrent requests arrive at the exact same millisecond | Atomic SQLite UPSERT elects exactly 1 worker. 9 others read cached state. |
-| **CHAOS-02** | `stale-reservation` | Worker crashes mid-diagnosis leaving an orphaned `PENDING` lock | Policy engine sweeps stale lock and safely degrades to `STOP_AND_ESCALATE`. |
-| **CHAOS-03** | `duplicate-executor` | Network timeout right before physical dispatch triggers replay | Database primary key constraint blocks 2nd physical write before API call. |
+Live interactive chaos injection endpoints to stress-test the single-writer SQLite WAL lock boundary:
 
----
-
-# Technology Stack
-
-| Layer | Technology | Version | Purpose |
-|:---|:---|:---|:---|
-| **Frontend Framework** | React | 18.2 | Component architecture and state hydration |
-| **Build Tool** | Vite | 5.2 | Ultra-fast HMR and optimized production bundling |
-| **3D Engine** | Three.js / WebGL | 0.164 | 60 FPS Quantum Wave Mesh & constellation nodes |
-| **Animation** | Framer Motion | 13.1 | Smooth micro-interactions, layout transitions, marquees |
-| **Styling** | Tailwind CSS | 3.4 | Finera glassmorphism tokens and dark theme styling |
-| **Backend Framework** | FastAPI | 0.128 | High-throughput asynchronous REST API |
-| **Schema Validation** | Pydantic | 2.13 | Strict runtime type checking and enum boundary guards |
-| **Database** | SQLite (WAL Mode) | 3.x | Single-writer Write-Ahead-Log atomic transaction store |
-| **Testing** | Pytest | 8.4 | Unit, security, and invariant test suite |
-| **Frontend Hosting** | Vercel | Global CDN | Production frontend deployment |
-| **Backend Hosting** | Render | Cloud Web Service | Python FastAPI server deployment |
+| Scenario ID | Test Name | Simulated Fault | Verified Invariant Proof | Live Security Status |
+|:---|:---|:---|:---|:---:|
+| `CHAOS-01` | **Concurrent Webhooks** | 10 parallel webhook requests hitting the exact same millisecond | Atomic SQLite UPSERT elects exactly 1 worker. 9 others read cached state. | <img src="https://img.shields.io/badge/Proof-PASSED-38A169?style=flat-square" /> |
+| `CHAOS-02` | **Stale Reservation** | Worker process crashes mid-diagnosis leaving orphaned lock | Policy engine sweeps stale lock and safely degrades to `STOP_AND_ESCALATE`. | <img src="https://img.shields.io/badge/Proof-PASSED-38A169?style=flat-square" /> |
+| `CHAOS-03` | **Duplicate Executor** | Network timeout right before physical dispatch triggers replay | Database primary key constraint halts duplicate write before gateway dispatch. | <img src="https://img.shields.io/badge/Proof-PASSED-38A169?style=flat-square" /> |
 
 ---
 
-# REST API Surface
+# 🛠️ Technology Stack & Framework Matrix
 
-| Method | Endpoint | Description | Request / Response Schema |
-|:---|:---|:---|:---|
-| `GET` | `/api/events` | Ingest recent failed payment events | `limit: int` $\rightarrow$ `List[PaymentEvent]` |
-| `POST` | `/api/events/new` | Ingest next real-time anomaly event | `None` $\rightarrow$ `PaymentEvent` |
-| `POST` | `/api/pipeline/run` | Execute 3-stage deterministic recovery | `{ event: PaymentEvent }` $\rightarrow$ `PipelineResult` |
-| `GET` | `/api/metrics` | Fetch aggregated TPV & throughput telemetry | `None` $\rightarrow$ `TelemetryMetrics` |
-| `GET` | `/api/evaluation/benchmark` | Run 277 held-out batch evaluation | `None` $\rightarrow$ `BenchmarkComparison` |
-| `POST` | `/api/failure/concurrent-webhooks` | Inject 10x concurrent race scenario | `None` $\rightarrow$ `ChaosVerificationResult` |
-| `POST` | `/api/failure/stale-reservation` | Inject worker crash & sweep scenario | `None` $\rightarrow$ `ChaosVerificationResult` |
-| `POST` | `/api/failure/duplicate-executor` | Inject duplicate dispatch scenario | `None` $\rightarrow$ `ChaosVerificationResult` |
-| `GET` | `/api/state/reservations` | Direct query on `payment_reservations` WAL table | `None` $\rightarrow$ `List[ReservationRow]` |
-| `GET` | `/api/state/executors` | Direct query on `execution_history` audit table | `None` $\rightarrow$ `List[ExecutionRow]` |
-| `POST` | `/api/state/reset` | Reset WAL tables to pristine initial state | `None` $\rightarrow$ `StatusResponse` |
+<div align="center">
+
+<img src="https://img.shields.io/badge/Frontend-React_18.2-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+<img src="https://img.shields.io/badge/3D_Engine-Three.js_WebGL-000000?style=for-the-badge&logo=threedotjs&logoColor=white" />
+<img src="https://img.shields.io/badge/Styling-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+<img src="https://img.shields.io/badge/Backend-FastAPI_Python-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
+<img src="https://img.shields.io/badge/State_Store-SQLite_WAL-003B57?style=for-the-badge&logo=sqlite&logoColor=white" />
+<img src="https://img.shields.io/badge/Testing-Pytest_Suite-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" />
+<img src="https://img.shields.io/badge/Deployment-Vercel_%2B_Render-6366F1?style=for-the-badge&logo=vercel&logoColor=white" />
+
+</div>
+
+<br />
+
+| Layer | Technology | Version | Purpose & Architectural Role |
+|:---|:---|:---:|:---|
+| **Frontend Framework** | React | `18.2` | Component architecture, state hydration, and telemetry charts |
+| **Bundler & Tooling** | Vite | `5.2` | Lightning-fast HMR and optimized production bundle |
+| **3D Data Engine** | Three.js / WebGL | `0.164` | 60 FPS Quantum Wave Mesh & constellation nodes |
+| **Motion & Micro-interactions** | Framer Motion | `13.1` | Smooth layout animations, card flips, and marquees |
+| **Styling & Theme** | Tailwind CSS | `3.4` | Dark obsidian theme with Finera glassmorphism tokens |
+| **Backend Framework** | FastAPI | `0.128` | High-throughput asynchronous REST API |
+| **Schema Validation** | Pydantic | `2.13` | Strict runtime type checking and enum boundary guards |
+| **Database** | SQLite (WAL Mode) | `3.x` | Single-writer Write-Ahead-Log atomic transaction store |
+| **Testing Engine** | Pytest | `8.4` | Unit, security, and invariant test suite |
+| **Frontend CDN** | Vercel | Production | Global edge network hosting |
+| **Backend Service** | Render | Production | Cloud Web Service hosting Python FastAPI server |
 
 ---
 
-# Relational Data Model (SQLite WAL)
+# 🔌 REST API Surface & Endpoints
+
+| HTTP Method | Endpoint | Purpose | Request / Response Contract |
+|:---:|:---|:---|:---|
+| <img src="https://img.shields.io/badge/GET-2B6CB0?style=flat-square" /> | `/api/events` | Ingest recent failed payment events | `limit: int` $\rightarrow$ `List[PaymentEvent]` |
+| <img src="https://img.shields.io/badge/POST-38A169?style=flat-square" /> | `/api/events/new` | Ingest next real-time anomaly event | `None` $\rightarrow$ `PaymentEvent` |
+| <img src="https://img.shields.io/badge/POST-38A169?style=flat-square" /> | `/api/pipeline/run` | Execute 3-stage deterministic recovery | `{ event: PaymentEvent }` $\rightarrow$ `PipelineResult` |
+| <img src="https://img.shields.io/badge/GET-2B6CB0?style=flat-square" /> | `/api/metrics` | Aggregated TPV & throughput telemetry | `None` $\rightarrow$ `TelemetryMetrics` |
+| <img src="https://img.shields.io/badge/GET-2B6CB0?style=flat-square" /> | `/api/evaluation/benchmark` | Run 277 held-out batch evaluation | `None` $\rightarrow$ `BenchmarkComparison` |
+| <img src="https://img.shields.io/badge/POST-D69E2E?style=flat-square" /> | `/api/failure/concurrent-webhooks` | Inject 10x concurrent race scenario | `None` $\rightarrow$ `ChaosVerificationResult` |
+| <img src="https://img.shields.io/badge/POST-D69E2E?style=flat-square" /> | `/api/failure/stale-reservation` | Inject worker crash & sweep scenario | `None` $\rightarrow$ `ChaosVerificationResult` |
+| <img src="https://img.shields.io/badge/POST-D69E2E?style=flat-square" /> | `/api/failure/duplicate-executor` | Inject duplicate dispatch scenario | `None` $\rightarrow$ `ChaosVerificationResult` |
+| <img src="https://img.shields.io/badge/GET-2B6CB0?style=flat-square" /> | `/api/state/reservations` | Direct query on `payment_reservations` WAL | `None` $\rightarrow$ `List[ReservationRow]` |
+| <img src="https://img.shields.io/badge/GET-2B6CB0?style=flat-square" /> | `/api/state/executors` | Direct query on `execution_history` audit | `None` $\rightarrow$ `List[ExecutionRow]` |
+| <img src="https://img.shields.io/badge/POST-E53E3E?style=flat-square" /> | `/api/state/reset` | Reset WAL tables to pristine initial state | `None` $\rightarrow$ `StatusResponse` |
+
+---
+
+# 🗄️ Relational Data Model (SQLite WAL)
 
 ```mermaid
 erDiagram
@@ -318,39 +339,47 @@ erDiagram
 
 ---
 
-# Test Suite & Verification Matrix
+# 🧪 Test Suite & Invariant Verification Matrix
 
-All 17 automated tests pass in `< 1.0s`:
+<div align="center">
 
-| Test ID | Module | Invariant Tested | Expected Result |
-|:---|:---|:---|:---|
-| `TC-01` | `test_policy_engine` | Duplicate idempotency call on same group | Intercepted via cache, retry count not incremented |
-| `TC-02` | `test_policy_engine` | Transaction amount < ₹100 INR | Gated to `NO_ACTION` (economic floor abort) |
-| `TC-03` | `test_policy_engine` | Retry count >= 1 | Gated to `STOP_AND_ESCALATE` (bounded rule) |
-| `TC-04` | `test_policy_engine` | LLM diagnosis confidence < 0.80 | Gated to `NO_ACTION` (abstain on low confidence) |
-| `TC-05` | `test_policy_engine` | Payment already `SUCCESS` | Gated to `NO_ACTION` (prevent over-recovery) |
-| `TC-06` | `test_policy_engine` | `BANK_DEGRADATION` diagnosis | Maps deterministically to `OFFER_ALTERNATE_METHOD` |
-| `TC-07` | `test_policy_engine` | `MERCHANT_CHECKOUT_REGRESSION` | Maps deterministically to `STOP_AND_ESCALATE` |
-| `TC-08` | `test_policy_engine` | `TRANSIENT_TIMEOUT` diagnosis | Maps deterministically to `RETRY` (1 bounded attempt) |
-| `TC-09` | `test_policy_engine` | Proposal confidence > 1.0 or < 0.0 | Pydantic validation error raised |
-| `TC-10` | `test_policy_engine` | NaN / Infinity in confidence float | Pydantic validation error raised |
-| `TC-11` | `test_policy_engine` | Concurrency thread contention | Exactly 1 lock claimed, 0 corrupted states |
-| `TC-12` | `test_policy_engine` | Executor timeout recovery replay | Intercepted via state cache |
-| `TC-13` | `test_server` | Ingest events endpoint (`/api/events`) | 200 OK with mapped event list |
-| `TC-14` | `test_server` | Generate new event (`/api/events/new`) | 200 OK with typed event payload |
-| `TC-15` | `test_server` | Pipeline execution lifecycle (`/api/pipeline/run`) | 200 OK with 3-stage trace |
-| `TC-16` | `test_server` | Duplicate pipeline invocation | Returns `duplicate_blocked: true` |
-| `TC-17` | `test_server` | SQLite state query endpoints | Returns WAL table rows |
+<img src="https://img.shields.io/badge/Pytest_Status-17_PASSED-38A169?style=for-the-badge&logo=pytest&logoColor=white" />
+<img src="https://img.shields.io/badge/Execution_Time-0.95s-6366F1?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Test_Coverage-Invariants_%26_APIs-009688?style=for-the-badge" />
+
+</div>
+
+<br />
+
+| Test ID | Test Module | Invariant Tested | Verified Outcome | Status |
+|:---:|:---|:---|:---|:---:|
+| `TC-01` | `test_policy_engine` | Duplicate idempotency call on same group | Intercepted via cache, retry count not incremented | <img src="https://img.shields.io/badge/PASS-38A169?style=flat-square" /> |
+| `TC-02` | `test_policy_engine` | Transaction amount < ₹100 INR | Gated to `NO_ACTION` (economic floor abort) | <img src="https://img.shields.io/badge/PASS-38A169?style=flat-square" /> |
+| `TC-03` | `test_policy_engine` | Retry count >= 1 | Gated to `STOP_AND_ESCALATE` (bounded rule) | <img src="https://img.shields.io/badge/PASS-38A169?style=flat-square" /> |
+| `TC-04` | `test_policy_engine` | LLM diagnosis confidence < 0.80 | Gated to `NO_ACTION` (abstain on low confidence) | <img src="https://img.shields.io/badge/PASS-38A169?style=flat-square" /> |
+| `TC-05` | `test_policy_engine` | Payment already `SUCCESS` | Gated to `NO_ACTION` (prevent over-recovery) | <img src="https://img.shields.io/badge/PASS-38A169?style=flat-square" /> |
+| `TC-06` | `test_policy_engine` | `BANK_DEGRADATION` diagnosis | Maps deterministically to `OFFER_ALTERNATE_METHOD` | <img src="https://img.shields.io/badge/PASS-38A169?style=flat-square" /> |
+| `TC-07` | `test_policy_engine` | `MERCHANT_CHECKOUT_REGRESSION` | Maps deterministically to `STOP_AND_ESCALATE` | <img src="https://img.shields.io/badge/PASS-38A169?style=flat-square" /> |
+| `TC-08` | `test_policy_engine` | `TRANSIENT_TIMEOUT` diagnosis | Maps deterministically to `RETRY` (1 bounded attempt) | <img src="https://img.shields.io/badge/PASS-38A169?style=flat-square" /> |
+| `TC-09` | `test_policy_engine` | Proposal confidence > 1.0 or < 0.0 | Pydantic validation error raised | <img src="https://img.shields.io/badge/PASS-38A169?style=flat-square" /> |
+| `TC-10` | `test_policy_engine` | NaN / Infinity in confidence float | Pydantic validation error raised | <img src="https://img.shields.io/badge/PASS-38A169?style=flat-square" /> |
+| `TC-11` | `test_policy_engine` | Concurrency thread contention | Exactly 1 lock claimed, 0 corrupted states | <img src="https://img.shields.io/badge/PASS-38A169?style=flat-square" /> |
+| `TC-12` | `test_policy_engine` | Executor timeout recovery replay | Intercepted via state cache | <img src="https://img.shields.io/badge/PASS-38A169?style=flat-square" /> |
+| `TC-13` | `test_server` | Ingest events endpoint (`/api/events`) | 200 OK with mapped event list | <img src="https://img.shields.io/badge/PASS-38A169?style=flat-square" /> |
+| `TC-14` | `test_server` | Generate new event (`/api/events/new`) | 200 OK with typed event payload | <img src="https://img.shields.io/badge/PASS-38A169?style=flat-square" /> |
+| `TC-15` | `test_server` | Pipeline execution lifecycle (`/api/pipeline/run`) | 200 OK with 3-stage trace | <img src="https://img.shields.io/badge/PASS-38A169?style=flat-square" /> |
+| `TC-16` | `test_server` | Duplicate pipeline invocation | Returns `duplicate_blocked: true` | <img src="https://img.shields.io/badge/PASS-38A169?style=flat-square" /> |
+| `TC-17` | `test_server` | SQLite state query endpoints | Returns WAL table rows | <img src="https://img.shields.io/badge/PASS-38A169?style=flat-square" /> |
 
 ---
 
-# Repository Layout
+# 📂 Repository Layout
 
 ```text
 Razorpay-Build_A_Thon-2026-RevGuard.ai/
 │
-├── schema.py                   # Pydantic models for payment events & enum invariants
-├── proposals.py                # Typed LLM diagnostic proposals & confidence schema
+├── schema.py                   # Strict Pydantic models for payment events & enum invariants
+├── proposals.py                # Typed LLM diagnostic proposals & confidence boundaries
 ├── state_store.py              # SQLite WAL thread-safe idempotency repository
 ├── policy_engine.py            # Deterministic Policy Gate (Rules 0–5 bounded logic)
 ├── llm_agent.py                # Probabilistic LLM failure classifier
@@ -388,13 +417,17 @@ Razorpay-Build_A_Thon-2026-RevGuard.ai/
 │   ├── vite.config.js                   # Vite bundler configuration
 │   └── package.json                     # Frontend manifest & scripts
 │
+├── docs/
+│   ├── razorpay_track03_buildathon.png  # Official Razorpay Track 03 screenshot
+│   └── hero_console_preview.jpg         # Hero section UI visual preview
+│
 ├── .gitignore
 └── README.md
 ```
 
 ---
 
-# Local Development Guide
+# ⚙️ Local Development Guide
 
 ### 1. Backend Setup (FastAPI + SQLite WAL)
 ```bash
@@ -432,17 +465,23 @@ npm run dev
 
 ---
 
-# Author & Credits
+# 👨‍💻 Author & Credits
 
 <div align="center">
 
-**Avin Raj**  
+### **Avin Raj**  
 *Computer Science & Engineering*
 
 Built for **Razorpay Buildathon 2026** · **Track 03: AI Revenue Recovery**
 
 <br />
 
-<a href="https://razorpay-build-a-thon-2026-rev-guar.vercel.app/"><img src="https://img.shields.io/badge/Launch-RevGuard.ai_Live_Console-6366F1?style=for-the-badge&logo=vercel&logoColor=white" /></a>
+<a href="https://razorpay-build-a-thon-2026-rev-guar.vercel.app/"><img src="https://img.shields.io/badge/🚀_Launch_Live_Console-RevGuard.ai-6366F1?style=for-the-badge&logo=vercel&logoColor=white" /></a>
+<a href="https://github.com/Avinraj01/Razorpay-Build_A_Thon-2026---RavGuard.ai"><img src="https://img.shields.io/badge/⭐_Star_Repository-GitHub-181717?style=for-the-badge&logo=github" /></a>
+
+<br /><br />
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Plus+Jakarta+Sans&weight=700&size=20&duration=3000&pause=1000&color=6366F1&center=true&vCenter=true&width=750&lines=Autonomous+AI+Revenue+Recovery;Deterministic+Policy+Engine+Gate;Mathematical+Zero+Double-Charge;Fintech+Grade+Security" alt="RevGuard AI Footer Animation" />
 
 </div>
+
