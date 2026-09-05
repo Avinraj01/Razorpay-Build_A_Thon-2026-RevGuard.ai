@@ -34,31 +34,24 @@
 
 ---
 
-# Razorpay Buildathon 2026 Challenge & Problem Statement
+# 📑 Razorpay Buildathon 2026 · Track 03 Challenge
 
 <div align="center">
 
-### Track 03: AI Revenue Recovery
+### 🏆 Official Problem Statement: AI Revenue Recovery
 **"Find revenue that’s slipping away and win it back."**
 
+<br />
+
+<a href="https://razorpay.com/buildathon/">
+  <img src="docs/razorpay_track03_buildathon.png" alt="Razorpay Buildathon 2026 Track 03: AI Revenue Recovery" width="850" />
+</a>
+
+<br /><br />
+
+**[🌐 Open Official Razorpay Buildathon Website](https://razorpay.com/buildathon/)** &nbsp;&nbsp;·&nbsp;&nbsp; **[🚀 Launch Live RevGuard.ai Operator Console](https://razorpay-build-a-thon-2026-rev-guar.vercel.app/)**
+
 </div>
-
-```text
-THE PROBLEM:
-Build an agent that detects revenue at risk, determines the right intervention, 
-and executes a bounded recovery workflow: from payment failures and checkout 
-abandonment to overdue receivables.
-
-WHY NOW:
-Revenue loss rarely happens in one clean step. A payment degrades, a checkout 
-gets abandoned, a subscription fails. AI can now close the loop from detecting 
-the problem to diagnosing it, choosing the right intervention, and recovering 
-the money.
-
-THE BAR (EVALUATION CRITERIA):
-"Don't just identify the problem. Show measured money recovered across a batch, 
-with compliant escalation, stopping rules, and an audit trail."
-```
 
 ---
 
